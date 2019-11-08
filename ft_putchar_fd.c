@@ -1,43 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 21:06:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 23:41:39 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/06 13:18:43 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/06 13:23:16 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char		*ft_strcpy(char *dest, char *src)
+void	ft_putchar_fd(char c, int fd)
 {
-	int i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = src[i];
-	return (dest);
-}
-
-char		*ft_strdup(char *src)
-{
-	int		i;
-	char	*dup;
-
-	i = 0;
-	while (src[i])
-	{
-		i++;
-	}
-	if (!(dup = (char*)malloc(sizeof(char) * (i + 1))))
-		return (0);
-	ft_strcpy(dup, src);
-	return (dup);
+	write(fd, &c, 1);
 }

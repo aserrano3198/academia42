@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 17:45:16 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/07 17:15:04 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/06 11:28:10 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/08 23:13:09 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen3(char const *str)
+char		*ft_strcpy1(char *dest, const char *src)
 {
 	int i;
 
 	i = 0;
-	while (*(str + i))
+	while (src[i])
 	{
+		dest[i] = src[i];
 		i++;
 	}
-	return (i);
+	dest[i] = src[i];
+	return (dest);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*conc;
-	int		conclen;
-	int		i;
-	int		o;
+	char		*changed;
+	int			i;
 
-	conclen = ft_strlen3(s1) + ft_strlen3(s2) + 1;
-	if (!(conc = malloc(sizeof(char) * conclen)))
+	if (s == NULL || f == NULL)
 		return (NULL);
-	i = -1;
-	while (s1[++i])
-		conc[i] = s1[i];
-	o = -1;
-	while (s2[++o])
-		conc[i++] = s2[o];
-	conc[i] = '\0';
-	return (conc);
+	i = 0;
+	while (s[i])
+		i++;
+	if (!(changed = malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	ft_strcpy1(changed, s);
+	i = 0;
+	while (changed[i])
+	{
+		changed[i] = (*f)(i, changed[i]);
+		i++;
+	}
+	return (changed);
 }

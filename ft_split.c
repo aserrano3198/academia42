@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:08:26 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/05 17:41:50 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/08 22:52:35 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int		save_word(char *str, char const *s, char c, int i)
 char	**ft_split2(char const *s, char c, int max)
 {
 	int		j;
-	char	*str;
 	char	**tab;
 	int		i;
 

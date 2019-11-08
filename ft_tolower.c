@@ -6,11 +6,11 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:29:04 by aserrano          #+#    #+#             */
-/*   Updated: 2019/10/09 21:25:48 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/06 14:00:13 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int		ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

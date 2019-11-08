@@ -6,13 +6,13 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:08:43 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/04 19:00:47 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/09 00:11:25 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	fill_substr(char *substr, char *s, int start, int len)
+void	fill_substr(char *substr, char const *s, int start, int len)
 {
 	int i;
 
@@ -29,9 +29,9 @@ void	fill_substr(char *substr, char *s, int start, int len)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		counter;
-	int		i;
-	char	*substr;
+	size_t			counter;
+	int				i;
+	char			*substr;
 
 	i = start - 1;
 	counter = 0;
@@ -39,14 +39,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		counter++;
 	if (counter < len)
 	{
-		if(!(substr = (char *)malloc(sizeof(char) * (counter + 1))))
-			return (NULL);
+		if (!(substr = (char *)malloc(sizeof(char) * (counter + 1))))
+			return (substr);
 		fill_substr(substr, s, start, counter);
 	}
 	else
 	{
-		if(!(substr = (char *)malloc(sizeof(char) * ((int)len + 1))))
-			return (
+		if (!(substr = (char *)malloc(sizeof(char) * ((int)len + 1))))
+			return (substr);
 		fill_substr(substr, s, start, (int)len);
 	}
 	return (substr);

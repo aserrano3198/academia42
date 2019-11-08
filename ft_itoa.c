@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 17:45:59 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/05 18:47:31 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/08 22:04:25 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,10 @@ void			fillnbr(char *nbr, int n, int size, int i)
 int				n_size(int n)
 {
 	int i;
-	int aux;
 
 	i = 0;
+	if (n == 0)
+		return (1);
 	while (n / tenpow(i) != 0)
 		i++;
 	return (i);

@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 21:06:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 23:41:39 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/06 19:11:40 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/08 23:59:05 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcpy(char *dest, char *src)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i;
+	char			*scpy;
+	size_t			i;
 
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = src[i];
-	return (dest);
-}
-
-char		*ft_strdup(char *src)
-{
-	int		i;
-	char	*dup;
-
-	i = 0;
-	while (src[i])
-	{
-		i++;
-	}
-	if (!(dup = (char*)malloc(sizeof(char) * (i + 1))))
-		return (0);
-	ft_strcpy(dup, src);
-	return (dup);
+	i = -1;
+	scpy = (char *)s;
+	while (++i < n)
+		if (scpy[i] == (char)c)
+			return ((void *)(s + i));
+	return (NULL);
 }

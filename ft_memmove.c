@@ -1,56 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 18:43:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/09 00:05:41 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/06 17:41:56 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/09 00:01:20 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_strlen2(const char *str)
-{
-	int i;
-
-	i = 0;
-	while (*(str + i))
-	{
-		i++;
-	}
-	return (i);
-}
-
-void			*ft_memcpy1(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;
 	char			*dstcpy;
 	char			*srccpy;
 
-	if (!n || dst == src)
+	if (!len || dst == src)
 		return (dst);
 	dstcpy = (char *)dst;
 	srccpy = (char *)src;
 	i = -1;
-	while (++i < n)
-		dstcpy[i] = srccpy[i];
+	if (dstcpy > srccpy)
+		while (len != 0)
+		{
+			len--;
+			dstcpy[len] = srccpy[len];
+		}
+	else
+		while (++i < len)
+			dstcpy[i] = srccpy[i];
 	return (dst);
-}
-
-size_t			ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t	srclength;
-
-	srclength = ft_strlen2(src);
-	if (srclength < size)
-		ft_memcpy1(dst, src, srclength + 1);
-	else if (size)
-	{
-		ft_memcpy1(dst, src, size - 1);
-		dst[size - 1] = '\0';
-	}
-	return (srclength);
 }

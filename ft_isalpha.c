@@ -6,22 +6,19 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 21:29:00 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/04 14:09:19 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/07 17:59:47 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isalpha(int c)
 {
-	int	answer;
-
-	answer = 0;
-	if ((c < 'A') || (c < 'a' && c > 'Z'))	
+	if ((c < 'A') || (c < 'a' && c > 'Z'))
 	{
-		answer = 1;
+		return (0);
 	}
 	if (c > 'z')
 	{
-		answer = 1;
+		return (0);
 	}
-	return (answer);
+	return (1);
 }

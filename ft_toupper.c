@@ -6,11 +6,11 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:18:11 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/04 13:37:46 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/06 14:00:36 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupcase(int c)
+int		ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{

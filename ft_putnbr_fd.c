@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 21:06:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 23:41:39 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/06 13:39:28 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/06 13:59:25 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char		*ft_strcpy(char *dest, char *src)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
+	unsigned int	av;
+	char			toprint;
 
-	i = 0;
-	while (src[i])
+	if (n < 0)
 	{
-		dest[i] = src[i];
-		i++;
+		write(fd, "-", 1);
+		av = n * (-1);
 	}
-	dest[i] = src[i];
-	return (dest);
-}
-
-char		*ft_strdup(char *src)
-{
-	int		i;
-	char	*dup;
-
-	i = 0;
-	while (src[i])
-	{
-		i++;
-	}
-	if (!(dup = (char*)malloc(sizeof(char) * (i + 1))))
-		return (0);
-	ft_strcpy(dup, src);
-	return (dup);
+	else
+		av = n;
+	if (av / 10 != 0)
+		ft_putnbr_fd(av / 10, fd);
+	toprint = (av % 10) + 48;
+	write(fd, &toprint, 1);
 }

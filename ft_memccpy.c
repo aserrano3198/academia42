@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 21:06:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 23:41:39 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/06 17:03:53 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/08 23:58:06 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcpy(char *dest, char *src)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
+	size_t				i;
+	char				*dstcpy;
+	char				*srccpy;
+	char				*ret;
 
-	i = 0;
-	while (src[i])
+	dstcpy = (char *)dst;
+	srccpy = (char *)src;
+	i = -1;
+	while (++i < n)
 	{
-		dest[i] = src[i];
-		i++;
+		dstcpy[i] = srccpy[i];
+		if (srccpy[i] == (char)c)
+		{
+			ret = &dstcpy[++i];
+			return ((void *)ret);
+		}
 	}
-	dest[i] = src[i];
-	return (dest);
-}
-
-char		*ft_strdup(char *src)
-{
-	int		i;
-	char	*dup;
-
-	i = 0;
-	while (src[i])
-	{
-		i++;
-	}
-	if (!(dup = (char*)malloc(sizeof(char) * (i + 1))))
-		return (0);
-	ft_strcpy(dup, src);
-	return (dup);
+	return (0);
 }

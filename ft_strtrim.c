@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:27:39 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/05 15:07:16 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/08 23:14:11 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		set_start(char const *s1, char const *set)
 	return (i);
 }
 
-int		set_end(char const *s1, char const *set)
+int		set_end(char const *s1, char const *set, int start)
 {
 	int		i;
 	int		j;
@@ -44,16 +44,19 @@ int		set_end(char const *s1, char const *set)
 	i = 0;
 	while (s1[i])
 		i++;
+	i = i == 0 ? 0 : i - 1;
 	boolean = 'T';
-	while (boolean == 'T')
+	while (start < i && boolean == 'T')
 	{
-		i--;
 		boolean = 'F';
 		j = 0;
 		while (set[j])
 		{
 			if (s1[i] == set[j])
+			{
+				i--;
 				boolean = 'T';
+			}
 			j++;
 		}
 	}
@@ -86,8 +89,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*trimmed;
 
+	if (s1[0] == '\0')
+		return ((char *)s1);
 	start = set_start(s1, set);
-	end = set_end(s1, set);
+	end = set_end(s1, set, start);
 	trimmed = trim(s1, start, end);
 	return (trimmed);
 }

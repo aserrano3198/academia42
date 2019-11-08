@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 17:45:16 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/07 17:15:04 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/07 16:20:34 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/08 23:56:52 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int		ft_strlen3(char const *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int i;
+	void			*s;
+	char			*scpy;
+	size_t			bytes;
+	size_t			i;
 
-	i = 0;
-	while (*(str + i))
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*conc;
-	int		conclen;
-	int		i;
-	int		o;
-
-	conclen = ft_strlen3(s1) + ft_strlen3(s2) + 1;
-	if (!(conc = malloc(sizeof(char) * conclen)))
+	bytes = count * size;
+	if (!(s = malloc(bytes)))
 		return (NULL);
+	scpy = (char *)s;
 	i = -1;
-	while (s1[++i])
-		conc[i] = s1[i];
-	o = -1;
-	while (s2[++o])
-		conc[i++] = s2[o];
-	conc[i] = '\0';
-	return (conc);
+	while (++i < bytes)
+		scpy[i] = 0;
+	return (s);
 }
