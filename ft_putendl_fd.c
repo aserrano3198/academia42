@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:36:09 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/06 13:38:49 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:50:44 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *s, int fd)
 	int i;
 
 	i = -1;
+	if (s == NULL)
+		return ;
 	while (s[++i])
 		write(fd, &s[i], 1);
 	write(fd, "\n", 1);

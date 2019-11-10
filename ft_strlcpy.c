@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:43:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/09 00:05:41 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:39:57 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	srclength;
 
+	if (src == NULL)
+		return (0);
 	srclength = ft_strlen2(src);
 	if (srclength < size)
 		ft_memcpy1(dst, src, srclength + 1);

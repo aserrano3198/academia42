@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:27:39 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 23:14:11 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:45:50 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*trimmed;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	if (s1[0] == '\0')
 		return ((char *)s1);
 	start = set_start(s1, set);

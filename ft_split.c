@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:08:26 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 22:52:35 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:46:39 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,8 @@ char	**ft_split(char const *s, char c)
 {
 	int max;
 
+	if (s == NULL)
+		return (NULL);
 	max = 0;
 	return (ft_split2(s, c, max));
 }

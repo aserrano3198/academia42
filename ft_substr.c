@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:08:43 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/09 00:11:25 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:42:39 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = start - 1;
 	counter = 0;
+	if (s == NULL)
+		return (NULL);
 	while (s[++i])
 		counter++;
 	if (counter < len)

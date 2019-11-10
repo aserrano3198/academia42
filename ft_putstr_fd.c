@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:24:03 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/06 13:35:32 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 13:49:55 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int i;
 
+	if (s == NULL)
+		return ;
 	i = -1;
 	while (s[++i])
 		write(fd, &s[i], 1);
