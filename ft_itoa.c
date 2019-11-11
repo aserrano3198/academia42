@@ -6,13 +6,13 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 17:45:59 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/10 13:46:07 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/11 17:58:21 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-long int		tenpow(int i)
+static long int		tenpow(int i)
 {
 	long int		pow;
 
@@ -25,7 +25,7 @@ long int		tenpow(int i)
 	return (pow);
 }
 
-void			fillnbr(char *nbr, int n, int size, int i)
+static void			fillnbr(char *nbr, int n, int size, int i)
 {
 	unsigned int av;
 
@@ -43,7 +43,7 @@ void			fillnbr(char *nbr, int n, int size, int i)
 	nbr[i] = '\0';
 }
 
-int				n_size(int n)
+static int			n_size(int n)
 {
 	int i;
 
@@ -55,7 +55,7 @@ int				n_size(int n)
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	char	*nbr;
 	int		size;

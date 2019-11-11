@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 11:28:10 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 23:13:09 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/11 18:31:06 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char		*ft_strcpy1(char *dest, const char *src)
+static char		*ft_strcpy1(char *dest, const char *src)
 {
 	int i;
 
@@ -26,7 +26,7 @@ char		*ft_strcpy1(char *dest, const char *src)
 	return (dest);
 }
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char		*changed;
 	int			i;

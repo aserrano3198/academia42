@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 23:14:34 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/09 00:23:19 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:34:58 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strcpy(char *dest, char *src);
 char			*ft_strdup(char *src);
 char			*ft_strjoin(char const *s1, char const *s2);
-int				ft_strlen(char const *str);
+size_t			ft_strlen(const char *str);
 size_t			ft_strlcat(char *dest, char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));

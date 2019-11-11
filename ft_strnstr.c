@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:13:17 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/09 00:09:31 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:32:51 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		check_substr(const char *h, const char *n, size_t len, int i)
+static int	check_substr(const char *h, const char *n, size_t len, int i)
 {
 	int j;
 
@@ -30,7 +30,7 @@ int		check_substr(const char *h, const char *n, size_t len, int i)
 	return (0);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	const char	*ret;
 	int			i;

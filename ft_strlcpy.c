@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:43:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/10 13:39:57 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:31:49 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_strlen2(const char *str)
+static int				ft_strlen2(const char *str)
 {
 	int i;
 
@@ -24,7 +24,7 @@ int				ft_strlen2(const char *str)
 	return (i);
 }
 
-void			*ft_memcpy1(void *dst, const void *src, size_t n)
+static void				*ft_memcpy1(void *dst, const void *src, size_t n)
 {
 	size_t			i;
 	char			*dstcpy;
@@ -40,7 +40,7 @@ void			*ft_memcpy1(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-size_t			ft_strlcpy(char *dst, const char *src, size_t size)
+size_t					ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	srclength;
 

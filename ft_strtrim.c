@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:27:39 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/10 13:45:50 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/11 18:26:19 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		set_start(char const *s1, char const *set)
+static int		set_start(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
@@ -35,7 +35,7 @@ int		set_start(char const *s1, char const *set)
 	return (i);
 }
 
-int		set_end(char const *s1, char const *set, int start)
+static int		set_end(char const *s1, char const *set, int start)
 {
 	int		i;
 	int		j;
@@ -63,11 +63,12 @@ int		set_end(char const *s1, char const *set, int start)
 	return (i);
 }
 
-char	*trim(char const *s1, int start, int end)
+static char		*trim(char const *s1, int start, int end)
 {
 	char	*trimmed;
 	int		i;
 	int		o;
+
 
 	if (!(trimmed = malloc(sizeof(char) * (end - start + 2))))
 		return (NULL);
@@ -83,7 +84,7 @@ char	*trim(char const *s1, int start, int end)
 	return (trimmed);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
@@ -92,7 +93,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	if (s1[0] == '\0')
-		return ((char *)s1);
+		return ((char *)s1);	
 	start = set_start(s1, set);
 	end = set_end(s1, set, start);
 	trimmed = trim(s1, start, end);

@@ -3,16 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:08:43 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/10 13:42:39 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/11 17:53:04 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	fill_substr(char *substr, char const *s, int start, int len)
+static unsigned int	ft_strlen5(const char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (*(str + i))
+	{
+		i++;
+	}
+	return (i);
+}
+
+static void			fill_substr(char *substr, char const *s, int start, int len)
 {
 	int i;
 
@@ -27,7 +39,7 @@ void	fill_substr(char *substr, char const *s, int start, int len)
 	substr[i] = '\0';
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char				*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t			counter;
 	int				i;
@@ -37,7 +49,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	counter = 0;
 	if (s == NULL)
 		return (NULL);
-	while (s[++i])
+	while (start < (unsigned int)ft_strlen5(s) && start >= 0 && s[++i])
 		counter++;
 	if (counter < len)
 	{

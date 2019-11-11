@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:08:26 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/10 13:46:39 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/11 18:24:44 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int		ft_countwords(char const *s, char c)
+static int		ft_countwords(char const *s, char c)
 {
 	int i;
 	int words;
@@ -34,7 +34,7 @@ int		ft_countwords(char const *s, char c)
 	return (words);
 }
 
-int		size_nextword(char const *s, char c, int i)
+static int		size_nextword(char const *s, char c, int i)
 {
 	int counter;
 
@@ -51,7 +51,7 @@ int		size_nextword(char const *s, char c, int i)
 	return (counter);
 }
 
-int		save_word(char *str, char const *s, char c, int i)
+static int		save_word(char *str, char const *s, char c, int i)
 {
 	int j;
 
@@ -73,7 +73,7 @@ int		save_word(char *str, char const *s, char c, int i)
 	return (i);
 }
 
-char	**ft_split2(char const *s, char c, int max)
+static char		**ft_split2(char const *s, char c, int max)
 {
 	int		j;
 	char	**tab;
@@ -101,7 +101,7 @@ char	**ft_split2(char const *s, char c, int max)
 	return (tab);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	int max;
 

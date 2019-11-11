@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:45:16 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/10 13:44:50 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/11 17:56:23 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen3(char const *str)
+static int		ft_strlen3(char const *str)
 {
 	int i;
 
@@ -24,7 +24,7 @@ int		ft_strlen3(char const *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char			*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*conc;
 	int		conclen;

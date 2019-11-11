@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 21:06:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/08 23:41:39 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:04:54 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcpy(char *dest, char *src)
+char			*ft_strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -26,7 +26,7 @@ char		*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char		*ft_strdup(char *src)
+char			*ft_strdup(char *src)
 {
 	int		i;
 	char	*dup;

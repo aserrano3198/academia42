@@ -6,7 +6,7 @@
 #    By: aserrano <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 16:32:01 by aserrano          #+#    #+#              #
-#    Updated: 2019/11/07 17:10:58 by aserrano         ###   ########.fr        #
+#    Updated: 2019/11/10 19:57:58 by aserrano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,14 @@ SRCO = ft_atoi.o		ft_memccpy.o	ft_putnbr_fd.o	ft_strmapi.o \
 all:	$(NAME)
 
 $(NAME):
-		gcc -Werror -Wall -Wextra -c $(SRC)
-		ar rc $(NAME) $(SRCO)
-		ranlib $(NAME)
+		-@gcc -Werror -Wall -Wextra -c $(SRC)
+		-@ar rc $(NAME) $(SRCO)
+		-@ranlib $(NAME)
 
 clean:	
-		rm -f $(SRCO)
+		-@rm -f $(SRCO)
 
 fclean:	clean
-		rm -f $(NAME)
+		-@rm -f $(NAME)
 
 re: 	fclean all
