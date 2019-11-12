@@ -6,7 +6,7 @@
 /*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 11:28:10 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/11 18:31:06 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:39:05 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char		*changed;
 	int			i;
 
-	if (s == NULL || f == NULL)
+	if (s == NULL)
 		return (NULL);
 	i = 0;
 	while (s[i])

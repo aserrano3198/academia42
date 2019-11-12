@@ -6,7 +6,7 @@
 /*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 21:06:46 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/10 19:04:54 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/11 19:28:18 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char			*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char			*ft_strdup(char *src)
+char			*ft_strdup(const char *src)
 {
 	int		i;
 	char	*dup;
@@ -38,6 +38,6 @@ char			*ft_strdup(char *src)
 	}
 	if (!(dup = (char*)malloc(sizeof(char) * (i + 1))))
 		return (0);
-	ft_strcpy(dup, src);
+	ft_strcpy(dup, (char *)src);
 	return (dup);
 }

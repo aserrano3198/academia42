@@ -6,7 +6,7 @@
 /*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:27:39 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/11 18:26:19 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/12 18:38:03 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ static char		*trim(char const *s1, int start, int end)
 	int		i;
 	int		o;
 
-
 	if (!(trimmed = malloc(sizeof(char) * (end - start + 2))))
 		return (NULL);
 	i = start;
@@ -93,7 +92,12 @@ char			*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	if (s1[0] == '\0')
-		return ((char *)s1);	
+	{
+		if (!(trimmed = malloc(sizeof(char) * 1)))
+			return (NULL);
+		trimmed[0] = '\0';
+		return (trimmed);
+	}
 	start = set_start(s1, set);
 	end = set_end(s1, set, start);
 	trimmed = trim(s1, start, end);

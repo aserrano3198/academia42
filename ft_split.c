@@ -6,7 +6,7 @@
 /*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:08:26 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/11 18:24:44 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/12 18:39:41 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,7 @@ static char		**ft_split2(char const *s, char c, int max)
 	while (j < max)
 	{
 		if (!(tab[j] = malloc(sizeof(char) * (size_nextword(s, c, i) + 1))))
-		{
-			while (j-- >= 0)
-				free(tab[j]);
-			free(tab);
 			return (NULL);
-		}
 		i = save_word(tab[j], s, c, i);
 		j++;
 	}

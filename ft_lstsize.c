@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 21:29:00 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/12 18:59:49 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/12 14:52:04 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/12 18:11:15 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
-	if ((c < 'A') || (c < 'a' && c > 'Z'))
-	{
+	int i;
+
+	i = 0;
+	if (lst == NULL)
 		return (0);
-	}
-	if (c > 'z')
+	while (lst->next)
 	{
-		return (0);
+		lst = lst->next;
+		i++;
 	}
-	return (1);
+	return (++i);
 }

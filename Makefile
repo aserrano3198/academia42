@@ -6,7 +6,7 @@
 #    By: aserrano <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 16:32:01 by aserrano          #+#    #+#              #
-#    Updated: 2019/11/10 19:57:58 by aserrano         ###   ########.fr        #
+#    Updated: 2019/11/12 18:45:37 by aserrano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,14 @@ SRCO = ft_atoi.o		ft_memccpy.o	ft_putnbr_fd.o	ft_strmapi.o \
 		ft_isprint.o	ft_putchar_fd.o	ft_strlcpy.o	ft_toupper.o \
 		ft_itoa.o		ft_putendl_fd.o	ft_strlen.o
 
+SRCB = 	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c \
+		ft_lstdelone.c	ft_lstlast.c		ft_lstadd_back.c
+
+SRCBO = ft_lstnew.o		ft_lstadd_front.o	ft_lstsize.o \
+		ft_lstdelone.o	ft_lstlast.o		ft_lstadd_back.o
+		
+
+
 all:	$(NAME)
 
 $(NAME):
@@ -39,8 +47,13 @@ $(NAME):
 		-@ar rc $(NAME) $(SRCO)
 		-@ranlib $(NAME)
 
+bonus:	
+		-@gcc -Werror -Wall -Wextra -c $(SRCB) $(SRC)
+		-@ar rc $(NAME) $(SRCBO) $(SRCO)
+		-@ranlib $(NAME)
+
 clean:	
-		-@rm -f $(SRCO)
+		-@rm -f $(SRCO) $(SRCBO)
 
 fclean:	clean
 		-@rm -f $(NAME)
