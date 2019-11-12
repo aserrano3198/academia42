@@ -6,7 +6,7 @@
 #    By: aserrano <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 16:32:01 by aserrano          #+#    #+#              #
-#    Updated: 2019/11/12 18:45:37 by aserrano         ###   ########.fr        #
+#    Updated: 2019/11/12 19:24:43 by aserrano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,11 @@ SRCO = ft_atoi.o		ft_memccpy.o	ft_putnbr_fd.o	ft_strmapi.o \
 		ft_isprint.o	ft_putchar_fd.o	ft_strlcpy.o	ft_toupper.o \
 		ft_itoa.o		ft_putendl_fd.o	ft_strlen.o
 
-SRCB = 	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c \
-		ft_lstdelone.c	ft_lstlast.c		ft_lstadd_back.c
+SRCB = 	ft_lstnew_bonus.c		ft_lstadd_front_bonus.c	ft_lstsize_bonus.c \
+		ft_lstdelone_bonus.c	ft_lstlast_bonus.c		ft_lstadd_back_bonus.c
 
-SRCBO = ft_lstnew.o		ft_lstadd_front.o	ft_lstsize.o \
-		ft_lstdelone.o	ft_lstlast.o		ft_lstadd_back.o
+SRCBO = ft_lstnew_bonus.o		ft_lstadd_front_bonus.o	ft_lstsize_bonus.o \
+		ft_lstdelone_bonus.o	ft_lstlast_bonus.o		ft_lstadd_back_bonus.o
 		
 
 
