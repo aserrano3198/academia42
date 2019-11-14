@@ -6,7 +6,7 @@
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 23:14:34 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/12 18:23:14 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/14 18:12:52 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ size_t				ft_strlen(const char *str);
 size_t				ft_strlcat(char *dest, char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int					ft_strncmp(char *s1, char *s2, size_t n);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *haystack,
 					const char *needle, size_t len);
 char				*ft_strrchr(const char *s, int c);
@@ -68,5 +68,9 @@ int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*));
+
 
 #endif

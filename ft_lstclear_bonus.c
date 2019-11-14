@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aserrano <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 17:03:53 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/14 18:40:13 by aserrano         ###   ########.fr       */
+/*   Created: 2019/11/14 18:13:08 by aserrano          #+#    #+#             */
+/*   Updated: 2019/11/14 19:12:17 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void				ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t				i;
-	char				*dstcpy;
-	char				*srccpy;
-	char				*ret;
-
-	dstcpy = (char *)dst;
-	srccpy = (char *)src;
-	i = -1;
-	while (++i < n)
-	{
-		dstcpy[i] = srccpy[i];
-		if (srccpy[i] == (char)c)
-		{
-			ret = &dstcpy[++i];
-			return ((void *)ret);
-		}
-	}
-	return (0);
+	t_list	*next;
+	
+	if (!*lst || !del)
+		return ;
+	next = *lst;
+	if (next->next)
+		next = next->next;
+	if (next->next)
+		ft_lstclear(&next, del);
+	(*del)(next->content);
+	free(next);
+	next = NULL;
 }
