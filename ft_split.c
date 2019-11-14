@@ -6,7 +6,7 @@
 /*   By: aserrano <aserrano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:08:26 by aserrano          #+#    #+#             */
-/*   Updated: 2019/11/13 19:42:10 by aserrano         ###   ########.fr       */
+/*   Updated: 2019/11/14 17:00:28 by aserrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,17 @@ static int		ft_countwords(char const *s, char c)
 	int words;
 
 	i = 0;
-	while (s[i] == c)
-		i++;
 	words = 0;
-	if (i == 0)
-		words++;
 	while (s[i])
 	{
-		if ((i > 0) && (s[i - 1] == c && s[i] != c))
-			words++;
-		i++;
+		if (s[i] == c)
+		{
+			i++;
+			continue ;
+		}
+		words++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
 	return (words);
 }
@@ -38,7 +39,7 @@ static int		size_nextword(char const *s, char c, int i)
 {
 	int counter;
 
-	while (s[i] == c)
+	while (s[i] == c && s[i])
 		i++;
 	counter = 0;
 	while (s[i])
